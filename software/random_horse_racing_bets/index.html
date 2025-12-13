@@ -6,10 +6,52 @@
     <meta name="description" content="レースの頭数を入力すると、競馬の買い目をランダムに出力するミニアプリ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <script src="js/bets.js"></script>
   </head>
   <body>
+    <header>
+      <h1>競馬買い目ランダム出力<h1>
+    </header>
     <div>
       <p>運に頼っちゃおう！</p>
     </div>
+    <div>
+      <h2>出走頭数</h2>
+      <select id="numberOfRunners">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+      </select>
+    </div>
+    <div>
+      <h2>買い方</h2>
+      <select id="how_to_buy">
+        <option value="単勝">単勝</option>
+        <option value="複勝">複勝</option>
+        <option value="ワイド">ワイド</option>
+        <option value="枠連">枠連</option>
+        <option value="馬連">馬連</option>
+        <option value="馬単">馬単</option>
+        <option value="三連複">三連複</option>
+        <option value="三連単">三連単</option>
+      </select>
+    </div>
+    <div>
+      <button class="output_button">出力(未実装)</button>
   </body>
 </html>
