@@ -1,3 +1,9 @@
 .output_button {
   margin-top: 20px;
 }
+
+.result_flex {
+  display: flex;
+  column-gap: 10px;
+  margin-left: 20px;
+}
