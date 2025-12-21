@@ -17,8 +17,13 @@ function bettingSelectionsOutput() {
       picks.push(countArray[selectedIndex]);
       countArray.splice(selectedIndex, 1);
     }
+    picks.sort(compareNumbers);
     resultBettingNumber.textContent = picks.join(" ");
   }
+}
+
+function compareNumbers(a, b) {
+  return a - b;
 }
 
 outputButton.addEventListener("click", bettingSelectionsOutput);
