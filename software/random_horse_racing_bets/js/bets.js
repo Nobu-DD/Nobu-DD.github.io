@@ -18,7 +18,7 @@ function bettingSelectionsOutput() {
       countArray.splice(selectedIndex, 1);
     }
     picks.sort(compareNumbers);
-    resultBettingNumber.textContent = picks.join(" ");
+    resultBettingNumber.textContent = picks.join(", ");
   }
 }
 
