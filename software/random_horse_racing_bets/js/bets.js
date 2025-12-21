@@ -7,7 +7,18 @@ function bettingSelectionsOutput() {
   const howToBuy = document.getElementById('how_to_buy').value;
 
   resultHowToBuy.textContent = howToBuy;
-  resultBettingNumber.textContent = Math.floor(Math.random() * numberOfRunners) + 1;
+  if (howToBuy == "単勝" || howToBuy == "複勝") {
+    resultBettingNumber.textContent = Math.floor(Math.random() * numberOfRunners) + 1;
+  } else if (howToBuy == "ワイド") {
+    let countArray = Array.from({ length: numberOfRunners }, (v, i) => i+1);
+    let picks = [];
+    for (let i = 0; i < 3; i++) {
+      let selectedIndex = Math.floor(Math.random() * countArray.length);
+      picks.push(countArray[selectedIndex]);
+      countArray.splice(selectedIndex, 1);
+    }
+    resultBettingNumber.textContent = picks.join(" ");
+  }
 }
 
 outputButton.addEventListener("click", bettingSelectionsOutput);
