@@ -20,6 +20,16 @@ function bettingSelectionsOutput() {
     }
     picks.sort(compareNumbers);
     resultBettingNumber.textContent = picks.join(", ");
+  } else if (howToBuy.value == "馬連") {
+    const countArray = Array.from({ length: numberOfRunners.value }, (v, i) => i+1);
+    const picks = [];
+    for (let i= 0; i < 2; i++) {
+      const selectedIndex = Math.floor(Math.random() * countArray.length);
+      picks.push(countArray[selectedIndex]);
+      countArray.splice(selectedIndex, 1);
+    }
+      picks.sort(compareNumbers);
+      resultBettingNumber.textContent = picks.join(", ");
   }
 }
 
