@@ -20,7 +20,7 @@ function bettingSelectionsOutput() {
     }
     picks.sort(compareNumbers);
     resultBettingNumber.textContent = picks.join(", ");
-  } else if (howToBuy.value == "馬連") {
+  } else if (howToBuy.value == "馬連" || howToBuy.value == "馬単") {
     const countArray = Array.from({ length: numberOfRunners.value }, (v, i) => i+1);
     const picks = [];
     for (let i= 0; i < 2; i++) {
