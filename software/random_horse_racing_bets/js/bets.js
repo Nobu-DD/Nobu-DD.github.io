@@ -5,6 +5,7 @@ const numberOfRunners = document.getElementById('number_of_runners');
 const selectedWide = document.getElementById('wide');
 const howToBuy = document.getElementById('how_to_buy');
 
+// 買い目をランダムで出力する関数
 function bettingSelectionsOutput() {
 
   resultHowToBuy.textContent = howToBuy.value;
@@ -33,10 +34,12 @@ function bettingSelectionsOutput() {
   }
 }
 
+// ランダムで出力された買い目を昇順に入れ替え
 function compareNumbers(a, b) {
   return a - b;
 }
 
+// 馬券が3頭以上の組み合わせになる場合、出走頭数の"2"を非表示にする
 function changeRunners() {
   const number2 = document.getElementById("number_2");
 
