@@ -11,7 +11,7 @@ function bettingSelectionsOutput() {
   resultHowToBuy.textContent = howToBuy.value;
   if (howToBuy.value == "単勝" || howToBuy.value == "複勝") {
     resultBettingNumber.textContent = Math.floor(Math.random() * numberOfRunners.value) + 1;
-  } else if (howToBuy.value == "ワイド") {
+  } else if (howToBuy.value == "ワイド" || howToBuy.value == "三連複") {
     const countArray = Array.from({ length: numberOfRunners.value }, (v, i) => i+1);
     const picks = [];
     for (let i = 0; i < 3; i++) {
@@ -19,8 +19,7 @@ function bettingSelectionsOutput() {
       picks.push(countArray[selectedIndex]);
       countArray.splice(selectedIndex, 1);
     }
-    picks.sort(compareNumbers);
-    resultBettingNumber.textContent = picks.join(", ");
+    changeOrder(howToBuy.value, picks);
   } else if (howToBuy.value == "馬連" || howToBuy.value == "馬単") {
     const countArray = Array.from({ length: numberOfRunners.value }, (v, i) => i+1);
     const picks = [];
@@ -29,8 +28,7 @@ function bettingSelectionsOutput() {
       picks.push(countArray[selectedIndex]);
       countArray.splice(selectedIndex, 1);
     }
-      picks.sort(compareNumbers);
-      resultBettingNumber.textContent = picks.join(", ");
+    changeOrder(howToBuy.value, picks);
   }
 }
 
@@ -43,12 +41,24 @@ function compareNumbers(a, b) {
 function changeRunners() {
   const number2 = document.getElementById("number_2");
 
-  if (howToBuy.value == "ワイド") {
+  if (howToBuy.value == "ワイド" || howToBuy.value == "三連複") {
     number2.style.display = "none";
     numberOfRunners.value = numberOfRunners.value == "2" ? "3" : numberOfRunners.value;
   } else {
     number2.style.display = "block";
   }
+}
+
+// 買う馬を決めた後の並び替えをする関数
+function changeOrder(target, array) {
+  if (target == "馬単" || target == "三連単") {
+    array.forEach((i, idx) => {
+      array[idx] = `${idx + 1}着 ${array[idx]}`;
+    })
+  } else {
+    array.sort(compareNumbers);
+  }
+  resultBettingNumber.textContent = array.join(" , ");
 }
 
 outputButton.addEventListener("click", bettingSelectionsOutput);
