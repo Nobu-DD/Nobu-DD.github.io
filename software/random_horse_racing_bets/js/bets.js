@@ -11,7 +11,7 @@ function bettingSelectionsOutput() {
   resultHowToBuy.textContent = howToBuy.value;
   if (howToBuy.value == "単勝" || howToBuy.value == "複勝") {
     resultBettingNumber.textContent = Math.floor(Math.random() * numberOfRunners.value) + 1;
-  } else if (howToBuy.value == "ワイド" || howToBuy.value == "三連複") {
+  } else if (howToBuy.value == "ワイド" || howToBuy.value == "三連複" || howToBuy.value == "三連単") {
     const countArray = Array.from({ length: numberOfRunners.value }, (v, i) => i+1);
     const picks = [];
     for (let i = 0; i < 3; i++) {
