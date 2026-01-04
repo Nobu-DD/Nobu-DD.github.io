@@ -41,7 +41,7 @@ function compareNumbers(a, b) {
 function changeRunners() {
   const number2 = document.getElementById("number_2");
 
-  if (howToBuy.value == "ワイド" || howToBuy.value == "三連複") {
+  if (howToBuy.value == "ワイド" || howToBuy.value == "三連複" || howToBuy.value == "三連単") {
     number2.style.display = "none";
     numberOfRunners.value = numberOfRunners.value == "2" ? "3" : numberOfRunners.value;
   } else {
