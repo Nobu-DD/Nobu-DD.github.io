@@ -5,6 +5,14 @@ const numberOfRunners = document.getElementById('number_of_runners');
 const selectedWide = document.getElementById('wide');
 const howToBuy = document.getElementById('how_to_buy');
 
+class BracketQuinella {
+  constructor(all, number) {
+    this.all = all;
+    this.number = number;
+    // ここの下に枠を確定する処理を記述予定(無名関数を使用)
+  }
+}
+
 // 買い目をランダムで出力する関数
 function bettingSelectionsOutput() {
 
