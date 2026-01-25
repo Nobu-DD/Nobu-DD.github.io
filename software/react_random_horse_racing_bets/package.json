@@ -2,12 +2,13 @@
   "name": "react_random_horse_racing_bets",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Nobu-DD/Nobu-DD.github.io"
+  "homepage": "https://nobu-dd.github.io/software/react_random_horse_racing_bets/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^13.2.1",
+    "gh-pages": "^6.3.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-scripts": "5.0.1",
